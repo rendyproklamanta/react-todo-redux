@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Container from "@mui/material/Container";
+import { useState } from "react";
+import { Header } from "src/components/Header/Header";
+import { Content } from "src/components/Content/Content";
 
 function App() {
+  const [todolist, setTodolist] = useState([]);
+
+  const onSubmit = (value) => {
+    // get value
+    // push to todolist state
+    if (value) {
+      setTodolist([...todolist, value]);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container maxWidth="sm">
+        <h1>REA4C Todo List</h1>
+        <Header onSubmit={onSubmit} />
+        <Content data={todolist} />
+      </Container>
     </div>
   );
 }
