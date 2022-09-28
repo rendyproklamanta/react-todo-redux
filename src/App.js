@@ -1,28 +1,30 @@
 import "./App.css";
-import Container from "@mui/material/Container";
-import { useState } from "react";
-import { Header } from "src/components/Header/Header";
-import { Content } from "src/components/Content/Content";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import HomePage from "./pages/Home";
+import AboutPage from "./pages/About";
+import TodolistPage from "./pages/Todolist";
 
 function App() {
-  const [todolist, setTodolist] = useState([]);
-
-  const onSubmit = (value) => {
-    // get value
-    // push to todolist state
-    if (value) {
-      setTodolist([...todolist, value]);
-    }
-  };
-
   return (
-    <div className="App">
-      <Container maxWidth="sm">
-        <h1>REA4C Todo List</h1>
-        <Header onSubmit={onSubmit} />
-        <Content data={todolist} />
-      </Container>
-    </div>
+    <BrowserRouter>
+      <navbar style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Link to="/" style={{ margin: "1rem" }}>
+          Home
+        </Link>
+        <Link to="/about" style={{ margin: "1rem" }}>
+          About
+        </Link>
+        <Link to="/todolist" style={{ margin: "1rem" }}>
+          Todolist
+        </Link>
+      </navbar>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/todolist" element={<TodolistPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
