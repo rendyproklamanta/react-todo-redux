@@ -6,26 +6,26 @@ import AboutPage from "./pages/About";
 import TodolistPage from "./pages/Todolist";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <navbar style={{ display: "flex", justifyContent: "flex-end" }}>
-        <Link to="/" style={{ margin: "1rem" }}>
-          Home
-        </Link>
-        <Link to="/about" style={{ margin: "1rem" }}>
-          About
-        </Link>
-        <Link to="/todolist" style={{ margin: "1rem" }}>
-          Todolist
-        </Link>
-      </navbar>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/todolist" element={<TodolistPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+   return (
+      <BrowserRouter>
+         <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <Link to="/" style={{ margin: "1rem" }}>
+               Home
+            </Link>
+            <Link to="/about" style={{ margin: "1rem" }}>
+               About
+            </Link>
+            <Link to="/todolist" style={{ margin: "1rem" }}>
+               Todolist
+            </Link>
+         </div>
+         <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/todolist" element={<TodolistPage />} />
+         </Routes>
+      </BrowserRouter>
+   );
 }
 
 export default App;
