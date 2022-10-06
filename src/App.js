@@ -16,7 +16,7 @@ function App() {
                About
             </Link>
             <Link to="/todolist" style={{ margin: "1rem" }}>
-               Todolist
+               Todo List
             </Link>
          </div>
          <Routes>

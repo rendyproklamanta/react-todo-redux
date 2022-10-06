@@ -10,6 +10,7 @@ const HomePage = () => {
          <Helmet>
             <title>Home | Techready</title>
          </Helmet>
+         
          <Container>
             <h2>Hello I'm Index</h2>
             <Link to="/about">About</Link>

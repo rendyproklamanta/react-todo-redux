@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { TodoList } from "src/components/TodoList/TodoList";
 import Container from "@mui/material/Container";
 import { Helmet } from "react-helmet";
@@ -11,6 +10,7 @@ const TodolistPage = () => {
          <Helmet>
             <title>Todolist | Techready</title>
          </Helmet>
+
          <div className="App">
 
             <Container maxWidth="sm">
@@ -18,6 +18,7 @@ const TodolistPage = () => {
                <SetTodoList />
                <TodoList />
             </Container>
+
          </div>
       </>
    );
